@@ -1,23 +1,23 @@
-import logo from './logo.svg';
+import { useState } from 'react';
+import Message from './Message';
 import './App.css';
 
 function App() {
+  const [count,setCount] = useState(0);
+  const [day, setDay] = useState(true);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={ ` ${ day? "light" : "night" }  ` } >
+
+      <h1>Good { day? "Morning" : "Night" } </h1>
+
+      <Message counter={count} />
+
+
+      <button onClick= { ()=> setCount(count + 1) } > Increment Counter </button>
+      <button onClick= { ()=> setDay(!day) } > Update Day </button>
+
+
     </div>
   );
 }
