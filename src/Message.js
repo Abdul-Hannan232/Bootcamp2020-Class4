@@ -1,3 +1,5 @@
+import React from "react";
+
 const Message = (props) => {
     return (
         <h3> value of counter variable is { props.counter } </h3>

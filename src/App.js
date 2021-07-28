@@ -1,15 +1,16 @@
+import React from 'react';
 import { useState } from 'react';
 import Message from './Message';
 import './App.css';
 
 function App() {
   const [count,setCount] = useState(0);
-  const [day, setDay] = useState(true);
+  const [day, setDay] = useState(false);
 
   return (
-    <div className={ ` ${ day? "light" : "night" }  ` } >
+    <div className={ `box ${ day? "light" : "night" }` } >
 
-      <h1>Good { day? "Morning" : "Night" } </h1>
+      <h1>Good { day? 'Morning' : 'Night' } </h1>
 
       <Message counter={count} />
 
